@@ -34,6 +34,6 @@ UDP messaging application
    - İkinci makinanın swagger UI na "http://localhost:3002/api-docs" ile erişebilirsiniz.
 
 Test için Swagger UI dan mesage gönderip, ilgili cluster a gelen mesajları ve gönderdiği mesajları görebilirsiniz. 
-WebAPI tarafındaki send message methodu UDP üzerinden diğer makina mesajı iletmektedir, mesajı UDP üzerinde alan makina mesajı 
-mongoDB ye kaydedip, acknowledge mesajı UDP ile geriye iletmektedir, UDP üzerinden acknowledge mesajını alan makina 
+WebAPI tarafındaki send message methodu UDP üzerinden diğer makinaya mesajı iletmektedir, mesajı UDP üzerinde alan makina mesajı 
+mongoDB ye kaydedip, acknowledge mesajını UDP ile geriye iletmektedir, UDP üzerinden acknowledge mesajını alan makina 
 ilgili mesajın type'ni "0" dan "1" update eder, yani message.type=1 karşılık haberleşme olduğunu göstermektedir.
