@@ -1,0 +1,162 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "CREATYSOFT MESSAGING SERVER API",
+      "description": "CreatySoft Messaging Server API",
+      "license": {
+        "name": "",
+        "url": ""
+      }
+    },
+    "tags": [
+      {
+        "name": "Message",
+        "description": "API for message that send to each server with UDP"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/message": {
+        "post": {
+          "tags": [
+            "Message"
+          ],
+          "description": "Sending a message to other server with UDP protocol",
+          "parameters": [
+            {
+              "name": "message",
+              "in": "body",
+              "description": "Sending a message to other server with UDP protocol",
+              "schema": {
+                "$ref": "#/definitions/MessagePost"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "summary": "Sending a message to other server with UDP protocol",
+          "responses": {
+            "200": {
+              "description": "Message sends to other server over UDP",
+              "schema": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        }
+      },
+      "/message/{queryType}": {
+        "parameters": [
+          {
+            "name": "queryType",
+            "in": "path",
+            "required": true,
+            "description": "Get messages by QueryType. QueryType=0 return all received messages, QueryType=1 return all sent messages.",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Message"
+          ],
+          "summary": "Get messages by QueryType. QueryType=0 return all received messages, QueryType=1 return all sent messages.",
+          "responses": {
+            "200": {
+              "description": "Messages are:",
+              "schema": {
+                "$ref": "#/definitions/Messages"
+              }
+            }
+          }
+        }
+      },
+      "/message/{deleteType}": {
+        "parameters": [
+          {
+            "name": "deleteType",
+            "in": "path",
+            "required": true,
+            "description": "Delete messages by QueryType. QueryType=0 delete all received messages, QueryType=1 delete all sent messages. QueryType=2 delete all messages.",
+            "type": "string"
+          }
+        ],
+        "delete": {
+          "tags": [
+            "Message"
+          ],
+          "summary": "Delete messages by QueryType. QueryType=0 delete all received messages, QueryType=1 delete all sent messages. QueryType=2 delete all messages.",
+          "responses": {
+            "200": {
+              "description": "Messages are:",
+              "schema": {
+                "$ref": "#/definitions/MessageDelete"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Message": {
+        "required": [
+          "email",
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "senderAppName": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "senderAddress": {
+            "type": "string"
+          },
+          "recieverAddress": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "string"
+          },
+          "creationTime":{
+            "type":"string"
+          },
+          "type": {
+            "type": "string"
+          }
+
+        }
+      },
+      "Messages": {
+        "type": "array",
+        "$ref": "#/definitions/Message"
+      },
+      "MessagePost": {
+        
+        "properties": {
+          "payload": {
+            "type": "string"
+          }
+        }
+      },
+      "MessageDelete": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
