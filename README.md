@@ -23,7 +23,7 @@ UDP messaging application
 3.Docker image larını oluşturduktan sonra container ları çalıştırmak için altaki iki komudu çalıştırınız.
 
     - Birinci docker container i çalıştırmak için 
-        "docker run -e "APPTYPE=FIRSTAPP" -p 3001:3001 -p 3001:3001/udp -i -t messaging-firstapp"
+        "docker run -e "APP_TYPE=FIRSTAPP" -p 3001:3001 -p 3001:3001/udp -i -t messaging-firstapp"
     - İkinci docker container i çalıştırmak için 
         "docker run -e "APP_TYPE=SECONDAPP" -p 3002:3002 -p 3002:3002/udp -i -t messaging-secondapp"
 
