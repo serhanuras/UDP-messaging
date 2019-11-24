@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
       "version": "1.0.0",
-      "title": "CREATYSOFT MESSAGING SERVER API",
-      "description": "CreatySoft Messaging Server API",
+      "title": "MESSAGING SERVER API",
+      "description": "Messaging Server API",
       "license": {
         "name": "",
         "url": ""
