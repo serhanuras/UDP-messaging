@@ -44,6 +44,8 @@ message with using DELETE method interface at SwaggerUI.
 UDP message is sent to other machine with "type" flag as "0", when the receiving server receives the message, it firstly saves the message to MongoDB with flag as "0" and then sends an UDP acknowledege message to sender server. When sender server recieves the acknowledege message, it updates the flag of the message to "1". So if you see the message with the flag of "1" that means communication between servers is succesfully completed.
 
 
+
+
 TÜRKÇE:
 
 **# Uygulamanın Çalışması için izlenmesi gereken adımlar **
