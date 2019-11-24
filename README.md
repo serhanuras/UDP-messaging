@@ -15,6 +15,7 @@ ENGLISH:
 
 2. After replacing the RECEIVER_SERVER HOST varible, you should build docker image with using commands below.
 
+
    - To build first app docker image, execute command below; 
       "docker build -t messaging-firstapp ."
    - To build second app docker image, execute command below; 
@@ -22,6 +23,7 @@ ENGLISH:
 
 
 3. After building docker images, you should start up the containers with using commmands below.
+
 
     - To start up first docker container, execute command below; 
         "docker run -e "APP_TYPE=FIRSTAPP" -p 3001:3001 -p 3001:3001/udp -i -t messaging-firstapp"
