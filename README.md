@@ -8,6 +8,7 @@ UDP messaging application
 
   - Her iki docker image ini kendi makinanızda çalıştıracaksanız, kendi makinanızı ip si yazınız.
   - İki farklı makinaya kuracaksanız, uygulamanın iletişim kuracağı makinanın ip sini yazınız. 
+  
   UYARI: localhost veya 127.0.0.1 yazarsanız çalışmaz çünkü docker kendi içinde udp yapar.
 
 
